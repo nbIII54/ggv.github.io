@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Display</title>
-</head>
-<body>
-    <h1>Random Image</h1>
-    <img id="randomImage" alt="Random Image" style="max-width: 100%; height: auto;">
-    
+    <title>Random Image Redirect</title>
     <script>
         // Array of image URLs
         const images = [
@@ -16,16 +11,17 @@
             "https://static.zerochan.net/UTAU.full.4624358.jpg",
             "https://static.zerochan.net/Furina.de.Fontaine.full.4659034.png"
         ];
-        
-        // Function to select a random image
-        function displayRandomImage() {
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const randomImageUrl = images[randomIndex];
-            document.getElementById('randomImage').src = randomImageUrl;
+
+        // Function to get a random image URL
+        function getRandomImage() {
+            return images[Math.floor(Math.random() * images.length)];
         }
-        
-        // Display a random image when the page loads
-        window.onload = displayRandomImage;
+
+        // Redirect to a random image immediately
+        window.location.href = getRandomImage();
     </script>
+</head>
+<body>
+    <p>Redirecting to a random image...</p>
 </body>
 </html>
