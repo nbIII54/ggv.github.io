@@ -1,27 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Redirect</title>
-    <script>
-        // Array of image URLs
-        const images = [
-            "https://static.zerochan.net/Sparxie.full.4659240.jpg",
-            "https://static.zerochan.net/UTAU.full.4624358.jpg",
-            "https://static.zerochan.net/Furina.de.Fontaine.full.4659034.png"
-        ];
-
-        // Function to get a random image URL
-        function getRandomImage() {
-            return images[Math.floor(Math.random() * images.length)];
-        }
-
-        // Redirect to a random image immediately
-        window.location.href = getRandomImage();
-    </script>
-</head>
+<html>
 <body>
-    <p>Redirecting to a random image...</p>
+  <p>Redirecting to random image...</p>
+  <script>
+    fetch('/api/random-image').then(() => window.location.reload());
+  </script>
 </body>
 </html>
