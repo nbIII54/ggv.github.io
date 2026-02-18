@@ -1,43 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-
-<!-- Ảnh preview Discord (ảnh mặc định) -->
-<meta property="og:image" content="https://s1.zerochan.net/Gyakuten.Saiban.600.563292.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<title>Random Image</title>
-
-<style>
-body{
-  margin:0;
-  background:black;
-}
-img{
-  width:100%;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Display</title>
 </head>
-
 <body>
-
-<img id="randomImage">
-
-<script>
-
-// danh sách ảnh
-const images = [
-  "https://static.zerochan.net/Sparxie.full.4659240.jpg",
-  "https://s1.zerochan.net/Gyakuten.Saiban.600.563291.jpg",
-  "https://static.zerochan.net/Furina.de.Fontaine.full.4659034.png"
-];
-
-// random ảnh khi mở trang
-const randomImage = images[Math.floor(Math.random() * images.length)];
-document.getElementById("randomImage").src = randomImage;
-
-</script>
-
+    <h1>Random Image</h1>
+    <img id="randomImage" alt="Random Image" style="max-width: 100%; height: auto;">
+    
+    <script>
+        // Array of image URLs
+        const images = [
+            "https://static.zerochan.net/Sparxie.full.4659240.jpg",
+            "https://static.zerochan.net/UTAU.full.4624358.jpg",
+            "https://static.zerochan.net/Furina.de.Fontaine.full.4659034.png"
+        ];
+        
+        // Function to select a random image
+        function displayRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImageUrl = images[randomIndex];
+            document.getElementById('randomImage').src = randomImageUrl;
+        }
+        
+        // Display a random image when the page loads
+        window.onload = displayRandomImage;
+    </script>
 </body>
 </html>
